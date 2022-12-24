@@ -47,26 +47,26 @@ function writeToLog(operation, prevNum, enteredNum, result) {
 
 function calculateResult(calcType) {
   const enteredNum = getUserInput();
-  if (calcType !== 'Add' && 
-      calcType !== 'Subtract' && 
-      calcType !== 'Multiply' && 
-      calcType !== 'Divide' || 
-      !enteredNum) {
-    return;
-  }
+  // if (calcType !== 'Add' && 
+  //     calcType !== 'Subtract' && 
+  //     calcType !== 'Multiply' && 
+  //     calcType !== 'Divide' || 
+  //     !enteredNum) {
+  //   return;
+  // }
   const initialResult = currentResult;
   let mathOperator;
   if (calcType === 'Add') {
     currentResult += enteredNum;
     mathOperator = '+';
   } else if(calcType === 'Subtract') {
-    currentResult += enteredNum;
+    currentResult -= enteredNum;
     mathOperator = '-';
   } else if(calcType === 'Multiply') {
-    currentResult += enteredNum;
+    currentResult *= enteredNum;
     mathOperator = '*';
   } else if(calcType === 'Divide') {
-    currentResult += enteredNum;
+    currentResult /= enteredNum;
     mathOperator = '/';
   }
   createAndWriteOutput(mathOperator, initialResult, enteredNum);
